@@ -7,7 +7,7 @@ plugins {
 group = 'top.zixuan007' // 看着改改就行
 
 repositories {
-    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://maven.google.com/kotlin/kotlin-eap' }
     maven { url 'https://mirrors.huaweicloud.com/repository/maven' } //镜像仓库，加不加看你自己喜好了
     mavenCentral()
     jcenter()
