@@ -55,8 +55,9 @@ public class PluginMain extends JavaPlugin {
                         .plus("错误的端口"));
                     return;
                 }
-                domain = domain.split(":")[0];
-                if ((! Pattern.compile(
+                domain = domain.split(":")[0];            
+            }
+            if ((! Pattern.compile(
                     "[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\\.?"
                 )
                     .matcher(domain)
@@ -73,7 +74,6 @@ public class PluginMain extends JavaPlugin {
                         .plus("错误的服务器地址"));
                     return;
                 }
-            }
 
             ServerInfo serverInfo = BedrockSocket.fetchData(domain, Integer.parseInt(port));
             if (serverInfo.getOnline() == null || serverInfo.getOnline().length() < 1) {
