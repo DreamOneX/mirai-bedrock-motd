@@ -50,7 +50,7 @@ public class PluginMain extends JavaPlugin {
             String port = "19132";
             if (domain.contains(":")) {
                 port = domain.split(":")[1];
-                if (!Pattern.compile("\\d{1,5}").matcher(port) || Integer.valueOf(port) > 65535) {
+                if (!Pattern.compile("\\d{1,5}").matcher(port).matches || Integer.valueOf(port) > 65535) {
                     event.getGroup().sendMessage(MessageUtils.newChain(new At(event.getSender().getId()))
                         .plus("错误的端口"));
                     return;
@@ -59,11 +59,16 @@ public class PluginMain extends JavaPlugin {
                 if ((! Pattern.compile(
                     "[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\\.?"
                 )
-                     .matcher(domain)) && 
+                    .matcher(domain)
+                    .matches()
+                     )
+                    && 
                     (! Pattern.compile(
                         "((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}"
                     )
-                     .matcher(domain))) {
+                     .matcher(domain)
+                     .matches()
+                    )) {
                     event.getGroup().sendMessage(MessageUtils.newChain(new At(event.getSender().getId()))
                         .plus("错误的服务器地址"));
                     return;
