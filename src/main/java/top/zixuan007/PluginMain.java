@@ -45,7 +45,7 @@ public class PluginMain extends JavaPlugin {
         // 注册监听器
         Listener listener = GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
             String msg = event.getMessage().contentToString();
-            String domain = msg.replace("!motdpe", "").toLowerCase().trim();
+            String domain = msg.replace("#beping", "").toLowerCase().trim();
 
             String port = "19132";
             if (domain.contains(":")) {
