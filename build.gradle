@@ -1,7 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.21' // 版本必须为1.4及以上
     id 'java'
-    id 'net.mamoe.mirai-console' version '2.3.0' // Mirai版本号
+    id 'net.mamoe.mirai-console' version '2.10.1' // Mirai版本号
 }
 
 group = 'top.zixuan007' // 看着改改就行
