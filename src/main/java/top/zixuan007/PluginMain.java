@@ -50,7 +50,7 @@ public class PluginMain extends JavaPlugin {
             String port = "19132";
             if (domain.contains(":")) {
                 port = domain.split(":")[1];
-                if (!Pattern.compile("\\d{1,5}").matcher(port).matches || Integer.valueOf(port) > 65535) {
+                if (!Pattern.compile("\\d{1,5}").matcher(port).matches() || Integer.valueOf(port) > 65535) {
                     event.getGroup().sendMessage(MessageUtils.newChain(new At(event.getSender().getId()))
                         .plus("错误的端口"));
                     return;
